@@ -4,7 +4,9 @@ note tar fix commits
 
 #Automatically generated README below:
 
-___
+
+---
+
 
 # MinimalCliApp
 
