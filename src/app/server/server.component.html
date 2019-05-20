@@ -1,6 +1,13 @@
+<label>Server Name: </label>
+<input 
+  type="text"
+  class="form-control"
+  (input)="onUpdateServer($event)" 
+>
 <p>
-  server works!
+  {{ serverName }}
 </p>
+
 <button class="btn btn-primary" disabled>
   Add server
 </button>
