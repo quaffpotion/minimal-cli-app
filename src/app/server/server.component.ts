@@ -7,29 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServerComponent implements OnInit {
 
-  allowServerCreation = false;
-  serverCreationStatus = 'No server created'
-  serverName = 'test-server'
+  serverStatus = 'offline' //could also do the random status here
+  serverId = 10
 
 
   constructor() {
-
-    setTimeout(
-      () => {this.allowServerCreation = true},
-      2000)
+    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline'
   }
 
   ngOnInit() {
-  }
-
-  onCreateServer() {
-    this.serverCreationStatus = 'Created server: ' + this.serverName
-  }
-
-  onUpdateServer(event: Event) {
-    //this.serverName = event.target.value //is fine
-    this.serverName = (<HTMLInputElement>event.target).value //inform typescript what exactly it is, parentheses necessary
 
   }
 
+  getColor() {
+    return this.serverStatus === 'online' ? 'lightgreen' : 'red'
+  }
 }
