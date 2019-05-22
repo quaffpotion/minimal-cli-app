@@ -23,9 +23,39 @@
         >
           Add server
         </button>
-        <p>
+        <p style="background-color: lightgreen">
           {{ serverCreationStatus }}
-        </p>        
+        </p>  
+        <!-- These don't work
+          <p [style]="'background-color: lightgreen'">
+          {{ serverCreationStatus }}
+        </p>  
+        <p [style]="{background-color: 'lightgreen'}">
+          {{ serverCreationStatus }}
+        </p>
+        <div [style]="{'background-color': 'lightgreen'}">
+          new one {{ serverCreationStatus }}
+        </div>-->
+
+        <!-- Appears to cause a security issue that Angular blocks
+        <div [style]="styleObjectString">
+          {{ serverCreationStatus }}
+        </div> -->
+        <div [style.color]="'red'">
+          {{ serverCreationStatus }}
+        </div>
+        <div [style.background-color]="'red'">
+          {{ serverCreationStatus }}
+        </div>
+        
+      <p [ngStyle]="{'background-color': 'lightgreen'}">
+        {{ serverCreationStatus }}
+      </p> 
+      <p [ngStyle]="{backgroundColor: 'lightgreen'}">
+        {{ serverCreationStatus }}
+      </p> 
+        
+
     </div>
   </div>
 </div>

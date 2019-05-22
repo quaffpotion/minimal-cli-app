@@ -10,6 +10,9 @@ export class ServerComponent implements OnInit {
   allowServerCreation = false;
   serverCreationStatus = 'No server created'
   serverName = 'test-server'
+  inputValueString = "input value string yay"
+  //styleObject = {background-color: "lightgreen"}
+  styleObjectString = "{background-color: 'lightgreen'}"
 
   constructor() {
 
